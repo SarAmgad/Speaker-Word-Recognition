@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/Style Sheet/style.css" />
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="column1">
+    <div class="upper_div">
+     
+      <form class="form" action="{{url_for('audio')}}" method="post">
+       <div class="button">
+        <button
+          class="prediction_button"
+          id="prediction_button"
+          type="submit"
+          onclick="clicked_action()"
+        ></button>
+      </div>
+        <div class="label_sign_container">
+          <div class="result">
+          <div class="prediction" value="{{prediction}}"></div>
+        </div>
+      </div>
+<div class="sign">
+          <div class="right_wrong_sign"></div>
+        </div>
+       
+       
+      </form>
+ 
+      <script src="../static/java script/main.js"></script>
+      <br>
+  
+  </div>
+
+  </div>
+  
+  <div class="column">
+  <div class="center_div">
+     
+        
+      {% if spectro %}
+         <!-- <div class="gallery">
+            <a target="_blank" href="spectro.png">
+              <img src="{{ url_for('static',filename='spectro.png') }}" alt="Cinque Terre" width="800" height="600">
+            </a>
+            <div class="desc">Spectogram</div>
+           
+          </div> -->
+          <div class="gallery">
+            <a target="_blank" href="https://youtu.be/jvucLU_3OZg">
+              <img src="{{ url_for('static',filename='Speaker.png') }}"  alt="Cinque Terre" width="800" height="800">
+            </a>
+            <div class="desc">Speaker Recognition Scores</div>
+          </div>
+        
+        
+          <div class="gallery">
+            <a target="_blank" href="https://scikit-learn.org/stable/modules/mixture.html">
+              <img src="{{ url_for('static',filename='Word.png') }}"   alt="Cinque Terre" width="800" height="800">
+              <!--  -->
+            </a>
+            <div class="desc">Word Recognition Scores</div>
+
+            
+           
+        
+        </div>
+
+
+        
+
+
+      {% endif %}
+
+      </div>
+      <div class="score">
+        <div class="gallery">
+          <a target="_blank" href="https://scikit-learn.org/stable/modules/mixture.html">
+            <img src="{{ url_for('static',filename='spec_Rolloff.png') }}"   alt="Cinque Terre" width="800" height="800">
+          
+          </a>
+          <div class="desc">input
+            <br>
+            <h5>lower than Y1 means user is Sara,between Y1 and Y2 means user is Rawan,higher than Y2 mean user is Mohamed</h5>
+          </div>
+        </div>
+        <!-- <div class="gallery">
+          <a target="_blank" href="https://librosa.org/doc/main/generated/librosa.feature.spectral_rolloff.html">
+           <img src="{{ url_for('static',filename='RawanSpec.png') }}"   alt="Cinque Terre" width="100%" height="800"> 
+           
+          </a>
+          <div class="desc">Rawan</div>
+       </div>
+
+
+       <div class="gallery">
+        <a target="_blank" href="https://librosa.org/doc/main/generated/librosa.feature.spectral_rolloff.html">
+         <img src="{{ url_for('static',filename='SalahSpec.png') }}"   alt="Cinque Terre" width="100%" height="800"> 
+         
+        </a>
+        <div class="desc">Salah</div>
+
+        
+     </div> -->
+       <div class="gallery">
+         <a target="_blank" href="https://analyticsindiamag.com/a-tutorial-on-spectral-feature-extraction-for-audio-analytics/">
+
+          
+          <!-- <img src="{{ url_for('static',filename='SaraSpec.png') }}"   alt="Cinque Terre" width="100%" height="800"> -->
+          {% if flag == 'Sara'%}
+          <img src="{{ url_for('static',filename='SaraSpec.png') }}"   alt="Cinque Terre" width="100%" height="800">
+          {% elif flag == 'Rawan'%}
+          <img src="{{ url_for('static',filename='RawanSpec.png') }}"   alt="Cinque Terre" width="100%" height="800">
+          {% elif flag == 'Mohamed'%}
+          <img src="{{ url_for('static',filename='SalahSpec.png') }}"   alt="Cinque Terre" width="100%" height="800">
+          {% endif %}
+
+         </a>
+         <!-- <div class="desc">Sara</div> -->
+         <div class="desc">Spectral Rolloff of {{predictedSpeaker}}
+       
+         </div>
+      </div>
+      </div>
+    </div>
+ </div> 
+  </body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 100%; 
+}
+
+/* Left and right column */
+.column.side {
+  width: 50%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="row">
+  <div class="column side" style="background-color:#aaa;">
+
+
+  </div>
+  <div class="column middle" style="background-color:#bbb;">Column</div>
+ 
+</div>
+
+
+
+</body>
+</html>
+
+ -->

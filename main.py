@@ -85,10 +85,6 @@ def preProcessing():
     spectro= plt.savefig('./static/spectro.png')
     spectro=True
 
-    # mfccPlotting('output.wav', 'mfcc')
-    # mfccPlotting('GMM Data\sara\Sara_open_new (7).wav', 'mfccSara')
-    # mfccPlotting('GMM Data\salah\Mohamed_open_new (20).wav', 'mfccSalah')
-    # mfccPlotting('GMM Data/rawan/Rawan_open_new (2).wav', 'mfccRawan')
     spectral_Rolloff('GMM Data\salah\Mohamed_open_new (14).wav', 'SalahSpec',0.2)
     spectral_Rolloff('GMM Data/rawan/Rawan_open_new (6).wav', 'RawanSpec',0.12)
     spectral_Rolloff('GMM Data\salah\Mohamed_open_new (14).wav', 'SaraSpec',0.09)

@@ -1,0 +1,75 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+body{
+    background-color:rgba(200,200,200,0.08);
+    /* background: linear-gradient(#111,#222); */
+    height: 100vh;
+    width :100%;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.form{
+    /* display: flex; */
+    position: relative;
+    width: 60%;
+    height: 80%;
+    padding: 0px 0px;
+    border-radius: 30px;
+    /* background-color:rgba(200,200,200,0.08); */
+    /* justify-content: center; */
+    /* align-items: center; */
+
+}
+
+.prediction_button{
+    /* display: flex; */
+    position: absolute;
+    width:  7rem;
+    height: 7rem;
+    padding: 10px;
+    border-radius: 50%;
+    top: 50px;
+    left: 100px;
+
+
+    /* background-color: #0A66C2;#0A66C2    #16437E */
+    background-image: url('../static/Mic.png') ;
+    background-size: cover;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50% ;
+
+    /* border: 0px; */
+    align-items: center;
+    font-size: 30px;
+    /* line-height: 20px; */
+    /* font-family: sans-serif; */
+    /* font-weight: bolder; */
+    /* font-variant: unicase; */
+    letter-spacing: 3px;
+
+}
+
+.prediction_button:hover{
+    background-color:rgba(200,200,200,0.8);
+    color: white;
+}
+
+form .prediction{
+    position: absolute;
+    display: inherit;
+    width: 80%;
+    overflow-x: inherit;
+    width: inherit;
+    font-size: 50px;
+    left: 50%;
+    /* left: 100px; */
+}
